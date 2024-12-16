@@ -28,13 +28,7 @@ jobs:
       run: |
         pip install markitdown
 
-    # Step 4: 测试 MarkItDown
     - name: Test MarkItDown
-      run: |
-        echo "Hello, World!" > test.txt
-        python -c "
-from markitdown import MarkItDown
-md = MarkItDown()
-result = md.convert('test.txt')
-print(result.text_content)
+      run: python -c "from markitdown import MarkItDown; md = MarkItDown(); result = md.convert('test.txt'); print(result.text_content)"
+
         "
