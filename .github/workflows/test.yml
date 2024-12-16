@@ -1,0 +1,30 @@
+name: Install MarkItDown
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: 检出代码
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Step 2: 设置 Python 环境
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+
+    # Step 3: 安装 MarkItDown
+    - name: Install MarkItDown
+      run: |
+        pip install markitdown
+        markitdown --version
