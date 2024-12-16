@@ -29,6 +29,4 @@ jobs:
         pip install markitdown
 
     - name: Test MarkItDown
-      run: python -c "from markitdown import MarkItDown; md = MarkItDown(); result = md.convert('test.txt'); print(result.text_content)"
-
-        "
+      run: python xlsx.py
